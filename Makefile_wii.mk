@@ -26,7 +26,7 @@ include $(DEVKITPPC)/wii_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	./
+SOURCES		:=	./ ./src/
 DATA		:=	data
 TEXTURES	:=	
 INCLUDES	:=	include
@@ -45,6 +45,7 @@ CFLAGS	= -g -Werror -Wall -Wextra -DPLATFORM_WII -std=c++11 $(MACHDEP) $(INCLUDE
 CXXFLAGS	= -Wwrite-strings $(CFLAGS) -DSYNC_PLAYER -DUFBX_REAL_IS_FLOAT
 # Wii specific settings
 CXXFLAGS += -DMGDL_PLATFORM=\"Wii\"
+CXXFLAGS += -DMGDL_PLATFORM_WII
 
 LDFLAGS	=	$(MACHDEP) -Wl,-Map,$(notdir $@).map
 
